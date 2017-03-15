@@ -32,7 +32,7 @@ angular.module('starter.controllers', [])
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
     console.log('Doing login', $scope.loginData);
-
+     
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
     $timeout(function() {
@@ -40,7 +40,29 @@ angular.module('starter.controllers', [])
     }, 1000);
   };
 })
+.controller('LoginCtrl', function($scope, LoginService, $ionicPopup, $state) {
+    $scope.data = {};
+ 
+    $scope.login = function() {
 
+        if($scope.loginData.username == 'user' && $scope.loginData.password == '1') {
+          $state.go('tab.dash');
+        } else{
+           var alertPopup = $ionicPopup.alert({
+                title: 'Login failed!',
+                template: 'Please check your credentials!'
+            });
+        }
+        // LoginService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
+        //     $state.go('tab.dash');
+        // }).error(function(data) {
+        //     var alertPopup = $ionicPopup.alert({
+        //         title: 'Login failed!',
+        //         template: 'Please check your credentials!'
+        //     });
+        // });
+    }
+})
 .controller('PlaylistsCtrl', function($scope) {
   $scope.playlists = [
     { title: 'Reggae', id: 1 },

@@ -1,0 +1,72 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '–g',
+1 verbose cli   'n' ]
+2 info using npm@2.15.0
+3 info using node@v4.4.2
+4 verbose install initial load of /Users/prathyusharani/Documents/Sumbon/package.json
+5 warn package.json myapp@1.1.1 No repository field.
+6 warn package.json myapp@1.1.1 No license field.
+7 verbose readDependencies loading dependencies from /Users/prathyusharani/Documents/Sumbon/package.json
+8 silly cache add args [ '–g', null ]
+9 verbose cache add spec –g
+10 silly cache add args [ 'n', null ]
+11 verbose cache add spec n
+12 silly cache add parsed spec Result {
+12 silly cache add   raw: '–g',
+12 silly cache add   scope: null,
+12 silly cache add   name: null,
+12 silly cache add   rawSpec: '–g',
+12 silly cache add   spec: '/Users/prathyusharani/Documents/Sumbon/–g',
+12 silly cache add   type: 'local' }
+13 silly cache add parsed spec Result {
+13 silly cache add   raw: 'n',
+13 silly cache add   scope: null,
+13 silly cache add   name: 'n',
+13 silly cache add   rawSpec: '',
+13 silly cache add   spec: 'latest',
+13 silly cache add   type: 'tag' }
+14 silly addNamed n@latest
+15 verbose addNamed "latest" is being treated as a dist-tag for n
+16 info addNameTag [ 'n', 'latest' ]
+17 silly mapToRegistry name n
+18 silly mapToRegistry using default registry
+19 silly mapToRegistry registry https://registry.npmjs.org/
+20 silly mapToRegistry data Result {
+20 silly mapToRegistry   raw: 'n',
+20 silly mapToRegistry   scope: null,
+20 silly mapToRegistry   name: 'n',
+20 silly mapToRegistry   rawSpec: '',
+20 silly mapToRegistry   spec: 'latest',
+20 silly mapToRegistry   type: 'tag' }
+21 silly mapToRegistry uri https://registry.npmjs.org/n
+22 verbose addNameTag registry:https://registry.npmjs.org/n not in flight; fetching
+23 error addLocal Could not install /Users/prathyusharani/Documents/Sumbon/–g
+24 verbose request uri https://registry.npmjs.org/n
+25 verbose request no auth needed
+26 info attempt registry request try #1 at 9:40:45 AM
+27 verbose request id 57d1b32a768de6a0
+28 verbose etag W/"58999e96-fa78"
+29 verbose lastModified Tue, 07 Feb 2017 10:16:54 GMT
+30 http request GET https://registry.npmjs.org/n
+31 verbose stack TypeError: The header content contains invalid characters
+31 verbose stack     at ClientRequest.OutgoingMessage.setHeader (_http_outgoing.js:351:13)
+31 verbose stack     at new ClientRequest (_http_client.js:79:14)
+31 verbose stack     at Object.exports.request (http.js:31:10)
+31 verbose stack     at Object.socket.once.exports.request (https.js:182:15)
+31 verbose stack     at Request.start (/usr/local/lib/node_modules/npm/node_modules/request/request.js:747:30)
+31 verbose stack     at Request.end (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1381:10)
+31 verbose stack     at end (/usr/local/lib/node_modules/npm/node_modules/request/request.js:575:14)
+31 verbose stack     at Immediate._onImmediate (/usr/local/lib/node_modules/npm/node_modules/request/request.js:589:7)
+31 verbose stack     at processImmediate [as _immediateCallback] (timers.js:383:17)
+32 verbose cwd /Users/prathyusharani/Documents/Sumbon
+33 error Darwin 15.6.0
+34 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "–g" "n"
+35 error node v4.4.2
+36 error npm  v2.15.0
+37 error The header content contains invalid characters
+38 error If you need help, you may report this error at:
+38 error     <https://github.com/npm/npm/issues>
+39 verbose exit [ 1, true ]
