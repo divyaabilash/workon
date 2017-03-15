@@ -72,17 +72,20 @@ angular.module('starter', ['ionic'])
         $urlRouterProvider.otherwise('/app/home');
     })
     .factory('UserService', ['$q', '$http', function($q, $http) {
-            function getByUserName(username, password) {
-                console.log("hello from services");
-                return $q.resolve({
-                    username: username,
-                    password: password
-                });
-            }
+        function getByUserName(username, password) {
+            console.log("hello from services");
+            return $http.post('http://localhost:5000/user', {
+                username: username,
+                password: password
+            });
+        }
 
-            return {
-                getByUserName: getByUserName
-            }
+        var services = {};
+        services.getByUserName = getByUserName;
+        return services;
+        // return {
+        //     getByUserName: getByUserName
+        // }
     }])
     .controller('AppCtrl', ['$scope', '$ionicModal', '$timeout', '$state', 'UserService', function($scope, $ionicModal, $timeout, $state, UserService) {
 
@@ -130,7 +133,7 @@ angular.module('starter', ['ionic'])
                 // code if using a login system
                 $timeout(function() {
                     $scope.closeLogin();
-                      $state.go("app.home");
+                    $state.go("app.home");
                 }, 1000);
             };
         };
